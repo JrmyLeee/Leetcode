@@ -41,42 +41,42 @@
 class DynamicArray:
     
     def __init__(self, capacity: int):
-        self.capacity = capacity
-        self.size = 0
-        self.arr = [0] * capacity
+      self.capacity = capacity
+      self.size = 0
+      self.arr = [0] * capacity
 
     def get(self, i: int) -> int:
-        return self.arr[i]
+      return self.arr[i]
 
     def set(self, i: int, n: int) -> None:
-        self.arr[i] = n
+      self.arr[i] = n
 
     def pushback(self, n: int) -> None:
-        if self.size == self.capacity:
-            self.resize()
+      if self.size == self.capacity:
+          self.resize()
 
-        self.arr[self.size] = n
-        self.size += 1
+      self.arr[self.size] = n
+      self.size += 1
 
     def popback(self) -> int:
-        if self.size > 0:
-            self.size -= 1	
+      if self.size > 0:
+          self.size -= 1	
 
-        return self.arr[self.size]
+      return self.arr[self.size]
 
     def resize(self) -> None:
-        self.capacity = 2 * self.capacity
-        new_arr = [0] * self.capacity
+      self.capacity = 2 * self.capacity
+      new_arr = [0] * self.capacity
 
-        for i in range(self.size):
-            new_arr[i] = self.arr[i]
-        self.arr = new_arr
+      for i in range(self.size):
+          new_arr[i] = self.arr[i]
+      self.arr = new_arr
 
     def getSize(self) -> int:
-        return self.size
+      return self.size
     
     def getCapacity(self) -> int:
-        return self.capacity
+      return self.capacity
 
 # Ask:
 # 1. How come we don't add to self.size whenever we set?
