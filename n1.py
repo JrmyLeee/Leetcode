@@ -60,7 +60,7 @@ class DynamicArray:
 
     def popback(self) -> int:
         if self.size > 0:
-            self.size -= 1
+            self.size -= 1	
 
         return self.arr[self.size]
 
